@@ -100,7 +100,7 @@ class Jerakia(object):
         namespace_str = '/'.join(namespace)
         scope = self.scope(variables)
         options = { 
-            'namespace': '',
+            'namespace': namespace_str,
             'policy': policy,
         }
 
@@ -128,8 +128,8 @@ class LookupModule(LookupBase):
              key = lookuppath.pop()
              namespace = lookuppath
 
-             #if not namespace:
-             #    raise AnsibleError("No namespace given for lookup of key %s" % key)
+             if not namespace:
+                 raise AnsibleError("No namespace given for lookup of key %s" % key)
 
              response = jerakia.lookup(key=key, namespace=namespace, variables=variables)
              ret.append(response['payload'])

@@ -1,4 +1,5 @@
-token: ansible:96d2ae5feaebc1cdc74a6ee521bd3e8c53c1bf0bead6a40e5ba0f4b4724991fe4c1c749cc5fa8c10
+token: replace_this
 scope:
-  environment: ansible_nodename
+  certname: ansible_local.certname
+  environment: ansible_local.environment
 
