@@ -1,0 +1,3 @@
+---
+variables_from_file:
+  lookup_the_port_again: "{{ lookup('jerakia', 'httpd/port') }}"
