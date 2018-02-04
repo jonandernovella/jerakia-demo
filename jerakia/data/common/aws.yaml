@@ -1,0 +1,4 @@
+---
+region: us-east-1
+image: ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*
+instance_type: t2.micro
