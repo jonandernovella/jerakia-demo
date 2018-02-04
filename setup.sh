@@ -25,6 +25,10 @@ unzip -oq /tmp/terraform.zip -d /usr/local/bin
 unzip -oq /tmp/packer.zip -d /usr/local/bin
 ansible all -m lineinfile -a "dest=/root/.bashrc line='alias packer=/usr/local/bin/packer'"
 
+# install jinja2 tools
+pip install --upgrade pip setuptools
+pip install jinja2-cli jcp
+
 echo "test data lookup without server"
 jerakia lookup port
 
