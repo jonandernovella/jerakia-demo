@@ -1,5 +1,4 @@
 #!/bin/bash -eu
-location=$(dirname "$0")
 
 echo "demo - setup and packages"
 echo "
@@ -11,7 +10,7 @@ gpgcheck=0
 " | tee /etc/yum.repos.d/jerakia.repo
 
 yum install -y epel-release
-yum install -y jerakia unzip python-requests
+yum install -y jerakia unzip python-requests vim
 cp -f /vagrant/jerakia/policy.d/default.rb /etc/jerakia/policy.d
 
 # install ansible
