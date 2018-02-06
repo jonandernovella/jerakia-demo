@@ -15,6 +15,6 @@
     },
     "instance_type": "{{ instance_type }}",
     "ssh_username": "ubuntu",
-    "ami_name": "packer-example \{\{timestamp\}\}"
+    "ami_name": "packer-example {{ '{{' }} timestamp {{ '}}' }}"
   }]
 }
