@@ -13,5 +13,6 @@ jinja2 packer.json.j2 \
   -D $(lookup aws aws_access_key) \
   -D $(lookup aws aws_secret_key) \
   -D $(lookup aws region) \
-  -D $(lookup aws image)
+  -D $(lookup aws image) \
+  -D $(lookup aws instance_type)
 
