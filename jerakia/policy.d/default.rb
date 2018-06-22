@@ -5,7 +5,7 @@ policy :default do
   #
   lookup :main do
     datasource :file, {
-      :docroot => '/vagrant/jerakia/data',
+      :docroot => '/var/lib/jerakia/data',
       :searchpath => [
         "hostname/#{scope[:certname]}",
         "environment/#{scope[:environment]}",

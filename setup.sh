@@ -17,6 +17,10 @@ cp -f /vagrant/jerakia/policy.d/default.rb /etc/jerakia/policy.d
 yum install -y ansible
 echo "localhost ansible_connection=local" > /etc/ansible/hosts
 
+# Install Docker
+curl -LC - -o /tmp/docker.rpm https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-18.03.1.ce-1.el7.centos.x86_64.rpm
+yum install -y /tmp/docker.rpm
+
 # install terraform, packer
 mkdir -p ~/bin
 curl -LC - -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip
@@ -32,7 +36,9 @@ pip install jinja2-cli jcp
 echo "test data lookup without server"
 jerakia lookup port
 
-echo "start server"
-systemctl start jerakia
-systemctl status jerakia -l | tail -n 1
+# Start Docker
+sudo systemctl start docker
 
+# Start Jerakia
+sudo docker pull crayfishx/jerakia
+# sudo docker run -d -P -v $HOME/jerakia-demo/jerakia/policy.d:/etc/jerakia/policy.d -v $HOME/jerakia-demo/jerakia/data:/var/lib/jerakia/data -p 9843:9843 -e USERID=$UID crayfishx/jerakia
