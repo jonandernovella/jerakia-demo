@@ -1,4 +1,11 @@
+# see https://github.com/crayfishx/ansible-jerakia#configuration
+
+protocol: http
+host: localhost
+port: 9843
+
 token: replace_this
+
 scope:
   certname: ansible_local.certname
   environment: ansible_local.environment
