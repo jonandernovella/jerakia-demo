@@ -1,4 +1,5 @@
 - hosts: all
+  fact_path: /tmp/setup/ansible/facts.d
   tasks:
     - debug: msg="We're currently in the {{ ansible_local.environment }} env"
     - debug: msg="This node has certname {{ ansible_local.certname }}"

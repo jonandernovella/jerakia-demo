@@ -1,4 +1,5 @@
 - hosts: all
+  fact_path: /tmp/setup/ansible/facts.d
   tasks:
     - debug: msg="We've included an external var file in this run!"
     - debug: msg={{ variables_from_file }}
