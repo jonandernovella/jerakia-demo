@@ -43,9 +43,8 @@ cp -f /tmp/policy.d/* /etc/jerakia/policy.d/
 echo "test data lookup without server"
 jerakia lookup --namespace httpd port
 
-# Start Docker
-sudo systemctl start docker
+# Start Jerakia server
+sudo systemctl start jerakia
 
-# Start Jerakia
-sudo docker pull crayfishx/jerakia
-# sudo docker run -d -P -v /etc/jerakia/policy.d:/etc/jerakia/policy.d -v /var/lib/jerakia/data:/var/lib/jerakia/data -p 9843:9843 -e USERID=$UID crayfishx/jerakia
+# Start Docker
+# sudo systemctl start docker
